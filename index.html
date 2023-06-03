@@ -4,9 +4,505 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>검은사막</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                font-family: "Hahmlet", serif;
+            }
+            header {
+                background-color: #000000;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100vw;
+                height: 65px;
+                position: fixed;
+                top: 0;
+                z-index: 1000;
+            }
+            .nav > img {
+                display: flex;
+                padding: 20px;
+                width: 150px;
+                height: 40px;
+            }
+            .nav {
+                color: white;
+                display: flex;
+                align-items: center;
+            }
+            .user {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            .user > img {
+                padding: 10px;
+                width: 30px;
+                height: 30px;
+            }
+            #start {
+                transition: 0.5s ease-in-out;
+                width: 200px;
+                height: 65px;
+                color: white;
+                background-color: #8f714a;
+                text-decoration-line: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0.7;
+            }
+            #start:hover {
+                transition: 0.5s ease-in-out;
+                opacity: 1;
+            }
+            #sub {
+                text-align: center;
+                color: white;
+                padding: 40px;
+                text-decoration-line: none;
+            }
+            #sub > #hide-menu1 {
+                padding: 0 40px;
+                background-color: #000000;
+                color: white;
+                height: 0px;
+                position: absolute;
+                top: 65px;
+                transform: translate(-30%, 0);
+                transition: height 0.3s ease-in-out;
+                overflow: hidden;
+            }
+            #sub > #hide-menu2 {
+                padding: 0 40px;
+                background-color: #000000;
+                color: white;
+                height: 0px;
+                position: absolute;
+                top: 65px;
+                transform: translate(-30%, 0);
+                transition: height 0.3s ease-in-out;
+                overflow: hidden;
+            }
+            #sub > #hide-menu3 {
+                padding: 0 40px;
+                background-color: #000000;
+                color: white;
+                height: 0px;
+                position: absolute;
+                top: 65px;
+                transform: translate(-30%, 0);
+                transition: height 0.3s ease-in-out;
+                overflow: hidden;
+            }
+            #sub > #hide-menu4 {
+                padding: 0 40px;
+                background-color: #000000;
+                color: white;
+                height: 0px;
+                position: absolute;
+                top: 65px;
+                transform: translate(-30%, 0);
+                transition: height 0.3s ease-in-out;
+                overflow: hidden;
+            }
+            #sub > #hide-menu5 {
+                padding: 0 40px;
+                background-color: #000000;
+                color: white;
+                height: 0px;
+                position: absolute;
+                top: 65px;
+                transform: translate(-30%, 0);
+                transition: height 0.3s ease-in-out;
+                overflow: hidden;
+            }
+            #sub > #hide-menu6 {
+                padding: 0 40px;
+                background-color: #000000;
+                color: white;
+                height: 0px;
+                position: absolute;
+                top: 65px;
+                transform: translate(-30%, 0);
+                transition: height 0.3s ease-in-out;
+                overflow: hidden;
+            }
+            #sub > #hide-menu7 {
+                padding: 0 40px;
+                background-color: #000000;
+                color: white;
+                height: 0px;
+                position: absolute;
+                top: 65px;
+                transform: translate(-30%, 0);
+                transition: height 0.3s ease-in-out;
+                overflow: hidden;
+            }
+            #sub:hover > #hide-menu1 {
+                height: 130px;
+            }
+            #sub:hover > #hide-menu2 {
+                height: 80px;
+            }
+            #sub:hover > #hide-menu3 {
+                height: 200px;
+            }
+            #sub:hover > #hide-menu4 {
+                height: 80px;
+            }
+            #sub:hover > #hide-menu5 {
+                height: 280px;
+            }
+            #sub:hover > #hide-menu6 {
+                height: 100px;
+            }
+            #sub:hover > #hide-menu7 {
+                height: 80px;
+            }
+
+            main {
+                background-image: url("./img/main_feature_bg.jpg");
+                height: 300vh;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #main {
+                position: absolute;
+            }
+            #wmain {
+                display: flex;
+                position: absolute;
+                align-items: center;
+                transform: translate(-45px, -650px);
+            }
+            #maintext {
+                text-align: center;
+                transform: translate(0, -1200px);
+                font-size: 46px;
+            }
+            #subtext {
+                text-align: center;
+                transform: translate(0, -1180px);
+                font-size: 14px;
+                padding: 3px;
+            }
+            #wmaintext {
+                text-align: left;
+                font-size: 46px;
+                color: white;
+            }
+            #wsubtext {
+                text-align: left;
+                font-size: 14px;
+                padding-top: 20px;
+                color: white;
+                opacity: 0.5;
+            }
+            #wmain > #text {
+                float: left;
+                padding: 80px;
+            }
+
+            /* main > #body-img {
+                display: flex;
+                background-image: url("./img/main_feature_battle_thumb.jpg");
+                background-position: bottom;
+                height: 355px;
+                align-items: end;
+            }
+            main > #body-img:hover {
+                transition: transform 0.5s ease-in-out;
+                transform: scale3d(10px, 10px, 10px);
+            } */
+            #body-img {
+                display: flex;
+                position: relative;
+                transform: translate(300px, 100px);
+                justify-content: center;
+                align-items: end;
+            }
+            #bg {
+                display: flex;
+                align-items: end;
+                position: absolute;
+                height: 400px;
+                z-index: 100;
+                overflow: hidden;
+                transition: transform 0.5s ease-in-out;
+            }
+            #on {
+                transform: translate(0, 4px);
+                position: absolute;
+                z-index: 200;
+            }
+            #back {
+                transform: scale(1);
+                transition: transform 0.5s ease-in-out;
+            }
+            #body-img:hover #back {
+                transform: scale(1.1);
+                transition: transform 0.5s ease-in-out;
+            }
+            #imgtext {
+                z-index: 400;
+                transform: translate(-320px, 60px);
+            }
+            #imaintext {
+                text-align: left;
+                font-size: 46px;
+                color: white;
+                padding-bottom: 20px;
+            }
+            #isubtext {
+                text-align: left;
+                font-size: 14px;
+                padding: 3px;
+                color: white;
+                opacity: 0.5;
+            }
+            #last {
+                position: relative;
+                transform: translate(100px, 350px);
+            }
+            #left {
+                transform: translate(-750px, 450px);
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+            }
+            #left1 {
+                position: absolute;
+            }
+            #left2 {
+                position: absolute;
+                transform: translate(-30px, 60px);
+            }
+            #left3 {
+                position: absolute;
+                transform: translate(390px, 30px);
+            }
+            #fintext {
+                transform: translate(-180px, 500px);
+            }
+            #fmaintext {
+                text-align: left;
+                font-size: 46px;
+                color: white;
+                padding-bottom: 20px;
+            }
+            #fsubtext {
+                text-align: left;
+                font-size: 14px;
+                padding: 3px;
+                color: white;
+                opacity: 0.5;
+            }
+            #right1 {
+                transform: translate(250px, 150px);
+            }
+
+            #right2 {
+                transform: translate(-150px, 550px);
+            }
+            /* #bg > .img {
+                overflow: hidden;
+                width: 1280px;
+                height: 677px;
+            } */
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
-        깃허브 호스팅 연습
+        <header>
+            <!-- <div class="logo">
+                <img src="./img/logo.png" alt="logo" />
+            </div> -->
+            <div class="nav">
+                <img src="./img/logo.png" alt="logo" />
+                <a id="sub" href="#">
+                    새소식
+                    <div id="hide-menu1">
+                        <li>공지사항</li>
+                        <li>업데이트</li>
+                        <li>이벤트</li>
+                        <li>GM노트</li>
+                        <li>펄 상점</li>
+                    </div>
+                </a>
+                <a id="sub" href="#">
+                    게임소개
+                    <div id="hide-menu2">
+                        <li>게임 특징</li>
+                        <li>클래스 소개</li>
+                        <li>모험가 가이드</li>
+                    </div>
+                </a>
+                <a id="sub" href="#">
+                    모험가 캠프
+                    <div id="hide-menu3">
+                        <li>모험가</li>
+                        <li>길드</li>
+                        <li>뷰티앨범</li>
+                        <li>포토갤러리</li>
+                        <li>업데이트 히스토리</li>
+                        <li>통합거래소</li>
+                        <li>검은사막TV</li>
+                        <li>파트너 스트리머</li>
+                    </div>
+                </a>
+                <a id="sub" href="#">
+                    상점
+                    <div id="hide-menu4">
+                        <li>Acoin</li>
+                        <li>쿠폰 사용</li>
+                        <li>펄 상자 구매</li>
+                    </div>
+                </a>
+                <a id="sub" href="#">
+                    커뮤니티
+                    <div id="hide-menu5">
+                        <li>전체글</li>
+                        <li>피드백 게시판</li>
+                        <li>자유 게시판</li>
+                        <li>게임 토론</li>
+                        <li>모집 & 홍보</li>
+                        <li>건의 게시판</li>
+                        <li>팁 & 노하우</li>
+                        <li>클래스 공략</li>
+                        <li>팬 아트</li>
+                        <li>스크린샷 & 영상</li>
+                        <li>지식의 오아시스</li>
+                    </div>
+                </a>
+                <a id="sub" href="#">
+                    다운로드
+                    <div id="hide-menu6">
+                        <li>클라이언트</li>
+                        <li>영상</li>
+                        <li>월페이퍼</li>
+                        <li>OST</li>
+                    </div>
+                </a>
+                <a id="sub" href="#">
+                    고객센터
+                    <div id="hide-menu7">
+                        <li>FAQ</li>
+                        <li>신고센터</li>
+                        <li>보안센터</li>
+                    </div>
+                </a>
+            </div>
+            <div class="user">
+                <img src="./img/search-3-64.png" alt="search" />
+                <img src="./img/user.png" alt="user" />
+                <a id="start" href="#">게임시작</a>
+            </div>
+        </header>
+        <div>
+            <main>
+                <div id="main">
+                    <h2 id="maintext">고대의 진실을 찾아</h2>
+                    <h2 id="subtext">대륙의 중심에서 기억을 잃은 한 모험가.</h2>
+                    <h2 id="subtext">
+                        세계를 관통하는 비밀을 향한 긴 모험이 시작됩니다.
+                    </h2>
+                </div>
+                <div id="wmain">
+                    <div id="text">
+                        <h2 id="wmaintext">꿈꾸던 모험을 현실로</h2>
+                        <h2 id="wsubtext">
+                            말과 함께 초원을 가로지르는 방랑자, 거대한 범선으로
+                            섬과 육지를 오가는 대상인.<br />
+                            드넓은 세계를 유랑하며 나의 이야기를 만들어 가세요.
+                        </h2>
+                    </div>
+                    <img src="./img/main_feature_adventure_thumb.png" alt="" />
+                </div>
+                <div id="body-img">
+                    <div id="bg">
+                        <img
+                            id="back"
+                            src="./img/main_feature_battle_thumb.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div id="on">
+                        <img
+                            src="./img/main_feature_battle_character.png"
+                            alt=""
+                        />
+                    </div>
+                    <div id="imgtext">
+                        <h2 id="imaintext">끊이지 않는 전투와 전쟁</h2>
+                        <h2 id="isubtext">
+                            세계를 위협하는 세력을 저지하고, 때로는 다른
+                            모험가와 승부를 겨루는 짜릿한 전투들.
+                            <br />
+                            포화가 가득한 전쟁을 승리로 이끌어 길드의 명성을
+                            드높이고 막대한 부를 쟁취할 수도 있습니다.
+                        </h2>
+                    </div>
+                </div>
+                <div id="last">
+                    <div id="left">
+                        <div id="left1">
+                            <img
+                                src="./img/main_feature_life_thumb_1.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <div id="left2">
+                            <img
+                                src="./img/main_feature_life_thumb_1_char.png"
+                                alt=""
+                            />
+                        </div>
+                        <div id="left3">
+                            <img
+                                src="./img/main_feature_life_thumb_1_pet.png"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <div id="fintext">
+                        <h2 id="fmaintext">자유로운 생활,<br />또 다른 일상</h2>
+                        <h2 id="fsubtext">
+                            내 마음대로 꾸민 공간에서 여가를 즐기세요.
+                            <br />
+                            때로는 모닥불 근처에 둘러앉아 풀벌레 소리를 듣기도
+                            하고,<br />
+                            친구들과 함께 바다 낚시를 떠나거나 연금술사가
+                            되어보세요.
+                        </h2>
+                    </div>
+                    <div id="right">
+                        <img
+                            id="right1"
+                            src="./img/main_feature_life_thumb_2.jpg"
+                            alt=""
+                        />
+                        <img
+                            id="right2"
+                            src="./img/main_feature_life_thumb_3.jpg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer></footer>
     </body>
 </html>
